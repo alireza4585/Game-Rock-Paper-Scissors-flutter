@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const gameapp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class gameapp extends StatefulWidget {
+  const gameapp({Key? key}) : super(key: key);
 
+  @override
+  State<gameapp> createState() => _gameappState();
+}
+
+class _gameappState extends State<gameapp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
