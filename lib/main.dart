@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,10 +13,15 @@ class gameapp extends StatefulWidget {
   State<gameapp> createState() => _gameappState();
 }
 
-int a = 1;
-int b = 2;
-
 class _gameappState extends State<gameapp> {
+  int a() {
+    return Random().nextInt(3) + 1;
+  }
+
+  int b() {
+    return Random().nextInt(3) + 1;
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,18 +43,19 @@ class _gameappState extends State<gameapp> {
   }
 
   Widget colum() {
+    int one = a();
+    int tow = b();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       verticalDirection: VerticalDirection.up,
       children: [
-        SizedBox(width: double.infinity),
-        Image(image: AssetImage('images/$a.png')),
+        Image(image: AssetImage('images/$tow.png'), height: 100),
         TextButton(
           onPressed: () {
             setState(() {
-              a = 2;
-              b = 2;
+              a();
+              b();
             });
           },
           child: Text(
@@ -56,7 +64,7 @@ class _gameappState extends State<gameapp> {
           ),
           style: TextButton.styleFrom(minimumSize: Size(double.infinity, 10)),
         ),
-        Image(image: AssetImage('images/$b.png'))
+        Image(image: AssetImage('images/$one.png'), height: 100)
       ],
     );
   }
