@@ -25,6 +25,7 @@ class _gameappState extends State<gameapp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'vazir'),
       home: Scaffold(
         backgroundColor: Colors.red,
