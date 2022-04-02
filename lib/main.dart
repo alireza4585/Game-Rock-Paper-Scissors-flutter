@@ -11,6 +11,9 @@ class gameapp extends StatefulWidget {
   State<gameapp> createState() => _gameappState();
 }
 
+int a = 1;
+int b = 2;
+
 class _gameappState extends State<gameapp> {
   @override
   Widget build(BuildContext context) {
@@ -39,16 +42,21 @@ class _gameappState extends State<gameapp> {
       verticalDirection: VerticalDirection.up,
       children: [
         SizedBox(width: double.infinity),
-        Image(image: AssetImage('images/1.png')),
+        Image(image: AssetImage('images/$a.png')),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              a = 2;
+              b = 2;
+            });
+          },
           child: Text(
             'شروع بازی',
             style: TextStyle(color: Colors.white, fontSize: 25),
           ),
           style: TextButton.styleFrom(minimumSize: Size(double.infinity, 10)),
         ),
-        Image(image: AssetImage('images/2.png'))
+        Image(image: AssetImage('images/$b.png'))
       ],
     );
   }
